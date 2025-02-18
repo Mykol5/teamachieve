@@ -86,7 +86,7 @@ export default {
     async handleLogin() {
       try {
         const response = await axios.post(
-          "https://teamachievebackend.onrender.com",
+          "https://teamachievebackend.onrender.com/login",
           {
             email: this.email,
             password: this.password,
