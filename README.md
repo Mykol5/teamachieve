@@ -1,6 +1,10 @@
-# teamachieve
+# TeamAchieve
+
+## Backend Repository  
+[🔗 TeamAchieve Backend](https://github.com/Mykol5/teamachievebackend)
 
 ## Project setup
+
 ```
 yarn install
 ```
