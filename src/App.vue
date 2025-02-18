@@ -93,7 +93,7 @@ export default {
 .login-container {
   display: flex;
   min-height: 100vh;
-  background-color: #f3f4f6;
+  background-color: #ffffff;
 }
 
 /* Left Section */
@@ -150,7 +150,7 @@ export default {
   background-color: white;
   padding: 30px;
   border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); */
 }
 
 .small-logo {
