@@ -85,16 +85,19 @@ export default {
     },
     async handleLogin() {
       try {
-        const response = await axios.post("http://localhost:3000/login", {
-          email: this.email,
-          password: this.password,
-        });
+        const response = await axios.post(
+          "https://teamachievebackend.onrender.com",
+          {
+            email: this.email,
+            password: this.password,
+          }
+        );
 
         if (response.data.success) {
           alert("Login successful!");
           console.log("User Data:", response.data.user);
           localStorage.setItem("user", JSON.stringify(response.data.user));
-          this.$router.push("/dashboard"); // Redirect to dashboard (if using Vue Router)
+          // this.$router.push("/dashboard");
         } else {
           alert("Invalid email or password.");
         }
