@@ -69,6 +69,8 @@
 </template>
 
 <script>
+import axios from "axios"; // Import axios for API calls
+
 export default {
   data() {
     return {
@@ -81,8 +83,25 @@ export default {
     togglePassword() {
       this.showPassword = !this.showPassword;
     },
-    handleLogin() {
-      console.log("Logging in with:", this.email, this.password);
+    async handleLogin() {
+      try {
+        const response = await axios.post("http://localhost:3000/login", {
+          email: this.email,
+          password: this.password,
+        });
+
+        if (response.data.success) {
+          alert("Login successful!");
+          console.log("User Data:", response.data.user);
+          localStorage.setItem("user", JSON.stringify(response.data.user));
+          this.$router.push("/dashboard"); // Redirect to dashboard (if using Vue Router)
+        } else {
+          alert("Invalid email or password.");
+        }
+      } catch (error) {
+        console.error("Login failed:", error);
+        alert("Error logging in. Please try again.");
+      }
     },
   },
 };
